@@ -3,14 +3,17 @@ let addBtn = document.querySelector("#addBtn");
 
 let userArr = [];
 
+let objStr = localStorage.getItem('id');
+userArr = JSON.parse(objStr);
 addBtn.onclick = () => {
   let value = userInput.value;
   userArr.push({'id':value});
-  console.log(userArr)
+  saveInfo(userArr);
 }
 
-function saveInfo(){
-  
+function saveInfo(arr){
+  let makeString = JSON.stringify(arr);
+  localStorage.setItem('id',makeString);
 }
 
 function displayInfo(){
