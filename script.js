@@ -14,25 +14,25 @@ if (objStr != null) {
 displayInfo();
 addBtn.onclick = () => {
   let value = userInput.value;
-  if (edit_id!=null){
+  if (value.length != 0){
+    if (edit_id!=null){
     userArr.splice(edit_id,1,{ 'id': value });
     edit_id = null;
   }
   else{
-    if (value.length != 0) {
     userArr.push({ 'id': value });
   }
   }
   
   saveInfo(userArr);
   userInput.value = '';
-  displayInfo();
   addBtn.innerText = btnText;
 }
 
 function saveInfo(userArr) {
   let makeString = JSON.stringify(userArr);
   localStorage.setItem('id', makeString);
+  displayInfo();
 }
 
 function displayInfo() {
@@ -56,6 +56,4 @@ function editInfo(i) {
 function deleteInfo(i) {
   userArr.splice(i, 1);
   saveInfo(userArr);
-  displayInfo();
-
 }
