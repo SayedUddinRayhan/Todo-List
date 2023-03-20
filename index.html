@@ -14,9 +14,12 @@
 <body>
   <div class="main">
     <div class="input-group mb-3">
-      <input id="userInput" type="text" class="form-control" placeholder="Write your task" autofocus aria-label="Recipient's username"
-        aria-describedby="button-addon2">
+      <input id="userInput" type="text" class="form-control" placeholder="Write your task" autofocus
+        aria-label="Recipient's username" aria-describedby="button-addon2">
       <button id="addBtn" class="btn btn-outline-secondary" type="button" id="button-addon2">Add task</button>
+    </div>
+    <div id="searchdiv">
+      <input type="search" class="form-control" placeholder="Search..." aria-label="Recipient's username" id="search">
     </div>
 
     <div class="input-group">
@@ -29,7 +32,7 @@
           </tr>
         </thead>
         <tbody id="records">
-<!--           <tr>
+          <!--           <tr>
             <th scope="row">1</th>
             <td>Excercise</td>
             <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
